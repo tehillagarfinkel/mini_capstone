@@ -5,7 +5,8 @@ class Api::ProductsController < ApplicationController
   end
 
   def one_product_method
-    @products = Product.first
+    product_id = params["id"].to_i
+    @product = Product.find_by(id: product_id)
     render "one_product.json.jb"
   end
 end

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   # get "/photos" => "photos#index"
 
   namespace :api do
+    post "/users" => "users#create"
+
     get "/products" => "products#index"
     post "/products" => "products#create"
     get "/products/:id" => "products#show"

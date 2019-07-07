@@ -4,10 +4,19 @@ class Product < ApplicationRecord
   validates :name, length: { minimum: 2 }
   validates :price, presence: true
   validates :price, numericality: { greater_than: 0 }
-  validates :image_url, presence: true
   validates :description, presence: true
   validates :description, length: { maximum: 500,
                                     too_long: "500 characters is the maximum allowed" }
+
+  belongs_to :supplier
+  # def supplier
+  #   Supplier.find_by(id: self.supplier_id)
+  # end
+
+  has_many :images
+  # def images
+  #   Image.where(id: self.id)
+  # end
 
   def is_discounted?
     price <= 3

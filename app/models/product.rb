@@ -13,6 +13,8 @@ class Product < ApplicationRecord
   #   Supplier.find_by(id: self.supplier_id)
   # end
 
+  has_many :orders
+
   has_many :images
   # def images
   #   Image.where(id: self.id)

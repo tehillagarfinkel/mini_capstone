@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  # EXAMPLE HTML ROUTE
-  # get "/photos" => "photos#index"
-
   namespace :api do
+    get "/carted_products" => "carted_products#index"
+    post "/carted_products" => "carted_products#create"
+    delete "/carted_products/:id" => "carted_products#destroy"
+
     get "/orders" => "orders#index"
     post "/orders" => "orders#create"
     get "/orders/:id" => "orders#show"
